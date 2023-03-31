@@ -17,7 +17,7 @@ const { WAConnection, MessageType } = require('@adiwajshing/baileys').default
             const path = require('path')
             var router = express.Router();
             const port = process.env.PORT || 3000;
-const PORT = process.env.PORT || 3030;
+
 let app = (global.app = express());
 app.use(
         '/',
@@ -84,7 +84,7 @@ app.use(
                                                                                                                 inrl.ev.on('messages.upsert', () => { })
                                                                                                                   }
                                                                                                                     inrlmd()
-  res.sendFile('./qr.png', options)
+ // res.sendFile('./qr.png', options)
 }
 )
 );

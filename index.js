@@ -1,28 +1,53 @@
-const { WAConnection, MessageType } = require('@adiwajshing/baileys').default
-  const makeWASocket = require("@adiwajshing/baileys").default
-  const { exec, spawn, execSync } = require("child_process")
-  const pino = require('pino')
-  let qrcodee = require('qrcode')
-  const fs = require('fs')
+
   const aes256 = require('aes256');
   const qrcode = require("qrcode-terminal")
-  const { delay, useSingleFileAuthState } = require("@adiwajshing/baileys")
-  exec('rm -rf session.json')
-  exec('rm -rf qr.png')
-  const { state, saveState } = useSingleFileAuthState('./session.json')
-  var PastebinAPI = require('pastebin-js'),
-      pastebin = new PastebinAPI({
-            'api_dev_key' : 'u_53edsqmFGKd02RMyQPwONVG0bIPi-R',});
-            var express = require('express');
-            const path = require('path')
-            var router = express.Router();
-            const port = process.env.PORT || 3000;
-            /* GET home page. */
-            router.get('/', function(req, res, next) {
-            var options = {
-        root: path.join()
-};
-  function inrlmd() {
+let express = require('express');
+
+let path = require('path');
+
+let SocketIO = require('socket.io');
+
+let { toBuffer } = require('qrcode');
+
+const { exec, spawn, execSync } = require("child_process");
+
+let axios = require('axios');
+
+const fs = require('fs');
+
+const fetch = require('node-fetch');
+
+let app = (global.app = express());
+
+const PORT = process.env.PORT || 3030;
+
+const makeWASocket = require('@adiwajshing/baileys').default;
+
+const pino = require('pino');
+
+const router = express.Router();
+
+const {
+        delay,
+        useSingleFileAuthState,
+        makeInMemoryStore,
+} = require('@adiwajshing/baileys');
+
+const PastebinAPI = require('pastebin-js');
+
+let pastebin = new PastebinAPI({
+      'api_dev_key' : 'r1eflgs76uuvyj-Q8aQFCVMGSiJpDXSL',
+      'api_user_name' : 'ALPHA-704',
+      'api_user_password' : '0634923280/#'
+    });
+
+
+app.use(
+        '/',
+        router.get('/',(req, res) => {
+                
+                
+                function inrlmd() {
       let inrl = makeWASocket({
             logger: pino({ level: 'silent' }),
                   auth: state,
@@ -83,7 +108,8 @@ const { WAConnection, MessageType } = require('@adiwajshing/baileys').default
                                                                                                                   }
                                                                                                                     inrlmd()
   res.sendFile('./qr.png', options)
-  });
+}
+)
+);
+app.listen(PORT, () => console.log('App listened on port',PORT));
 
-
-module.exports = router;

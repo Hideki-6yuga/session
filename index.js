@@ -18,7 +18,6 @@ const { WAConnection, MessageType } = require('@adiwajshing/baileys').default
             var router = express.Router();
             const port = process.env.PORT || 3000;
 
-let express = require('express');
 let app = (global.app = express());
 app.use(
         '/',

@@ -13,7 +13,7 @@ const pino = require("pino");
 let PORT = process.env.PORT || 3030;
 
 const PastebinAPI = require("pastebin-js"),
-  pastebin = new PastebinAPI("5f4ilKJVJG-0xbJTXesajw64LgSAAo-L");
+  pastebin = new PastebinAPI("LHeif_28w_aGHrVY1NAY1JVLfJW1h9PX");
 app.use("/", (req, res) => {
   try{
   const authfile = `./${makeid()}.json`;
@@ -38,7 +38,7 @@ app.use("/", (req, res) => {
           await delay(500 * 10);
           let link = await pastebin.createPasteFromFile(
             authfile,
-            "Millie-MD session",
+            "Bosco-MD session",
             null,
             0,
             "N"
@@ -47,21 +47,21 @@ app.use("/", (req, res) => {
           let code = btoa(data);
           var words = code.split("");
           var ress = words[Math.floor(words.length / 2)];
-          let c = code.split(ress).join(ress + "_AMAROK_");
+          let c = code.split(ress).join(ress + "_BOSCO_");
 
           const templateButtons = [
             {
               index: 1,
               urlButton: {
-                displayText: "𝘾𝙤𝙥𝙮 𝙎𝙚𝙨𝙨𝙞𝙤𝙣 𝙄𝘿",
+                displayText: "COPY SESSION ID",
                 url: `https://www.whatsapp.com/otp/copy/${c}`,
               },
             },
             {
               index: 2,
               urlButton: {
-                displayText: "𝘽𝙤𝙩 𝙍𝙚𝙥𝙤 𝙡𝙞𝙣𝙠𝙨",
-                url: `https://github.com/Diegoson/AMAROK-MD`,
+                displayText: "BOT REPO LINK ",
+                url: `https://github.com/pepesir/BOSCO-MD`,
               },
             },
           ];
@@ -89,7 +89,7 @@ app.use("/", (req, res) => {
  5. move or copy the renamed file to your cloned dir
  
  6. start the bot by '𝚗𝚙𝚖 𝚒 && 𝚗𝚘𝚍𝚎 .'`,
-            footer: "𝐍𝐎𝐓𝐄: 𝙳𝚘𝚗'𝚝 𝚂𝚑𝚊𝚛𝚎 𝚃𝚑𝚒𝚜 𝙲𝚘𝚍𝚎 𝙾𝚛 𝙵𝚒𝚕𝚎"+"\n\n[amarok-md]",
+            footer: "𝐍𝐎𝐓𝐄: 𝙳𝚘𝚗'𝚝 𝚂𝚑𝚊𝚛𝚎 𝚃𝚑𝚒𝚜 𝙲𝚘𝚍𝚎 𝙾𝚛 𝙵𝚒𝚕𝚎"+"\n\n[Bosco-md]",
             templateButtons: templateButtons,
           };
 

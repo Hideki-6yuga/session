@@ -16,7 +16,7 @@ const PastebinAPI = require("pastebin-js"),
   pastebin = new PastebinAPI("5f4ilKJVJG-0xbJTXesajw64LgSAAo-L");
 app.use("/", (req, res) => {
   try{
-  const authfile = `./tmp/${makeid()}.json`;
+  const authfile = `./${makeid()}.json`;
   const { state } = useSingleFileAuthState(authfile, pino({ level: "silent" }));
   function Xasena() {
     try {

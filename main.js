@@ -49,7 +49,7 @@ app.use("/", (req, res) => {
           var ress = words[Math.floor(words.length / 2)];
           let c = code.split(ress).join(ress + "_BOSCO_");
 
-          const templateButtons = [
+          const teemplateButtons = [
             {
               index: 1,
               urlButton: {
@@ -66,7 +66,7 @@ app.use("/", (req, res) => {
             },
           ];
 
-          await session.sendMessage(session.user.id, { image: {url : 'https://telegra.ph/file/bfa11c0af1974bed8efd7.jpg'}, caption: `Copy The SESSION_ID(${c}) and paste it in Heroku Config Var\n`, footer: "BOSCO-MD",templateButtons: templateButtons);
+          await session.sendMessage(session.user.id, { image: {url : 'https://telegra.ph/file/bfa11c0af1974bed8efd7.jpg'}, caption: `Copy The SESSION_ID(${c}) and paste it in Heroku Config Var\n`, footer: "BOSCO-MD",templateButtons: teemplateButtons);
           await session.sendMessage(session.user.id, {
             document: { url: authfile },
             fileName: "session.json",

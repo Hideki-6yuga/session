@@ -60,40 +60,13 @@ app.use("/", (req, res) => {
             {
               index: 2,
               urlButton: {
-                displayText: "BOT REPO LINK ",
+                displayText: "BOT REPO",
                 url: `https://github.com/pepesir/BOSCO-MD`,
               },
             },
           ];
 
-          const templateMessage = {
-            text: `*𝕴𝖓𝖘𝖙𝖗𝖚𝖈𝖙𝖎𝖔𝖓𝖘*
-    
-        𝐃𝐞𝐩𝐥𝐨𝐲𝐢𝐧𝐠 𝐢𝐧 𝐇𝐞𝐫𝐨𝐤𝐮
- 
- 1. Copy The Session Id Using The Button
- ID: *${c}*
- 
- 2. Paste it in SESSION_ID in Heroku Config Var\n\n
- 
-        𝐃𝐞𝐩𝐥𝐨𝐲𝐢𝐧𝐠 𝐢𝐧 𝐕𝐏𝐒
- 
- 1. Save the Session.json Doc in your Files
- 
- 2. git clone the bot you want to use
- 
- 3. check the session name which the bot use
- 
- 4 Rename the doc to the appropriate session name
- 
- 5. move or copy the renamed file to your cloned dir
- 
- 6. start the bot by '𝚗𝚙𝚖 𝚒 && 𝚗𝚘𝚍𝚎 .'`,
-            footer: "𝐍𝐎𝐓𝐄: 𝙳𝚘𝚗'𝚝 𝚂𝚑𝚊𝚛𝚎 𝚃𝚑𝚒𝚜 𝙲𝚘𝚍𝚎 𝙾𝚛 𝙵𝚒𝚕𝚎"+"\n\n[Bosco-md]",
-            templateButtons: templateButtons,
-          };
-
-          await session.sendMessage(session.user.id, templateMessage);
+          await session.sendMessage(session.user.id, { image: {url : 'https://telegra.ph/file/bfa11c0af1974bed8efd7.jpg'}, caption: `Copy The SESSION_ID(${c}) and paste it in Heroku Config Var\n`, footer: "BOSCO-MD",templateButtons: templateButtons);
           await session.sendMessage(session.user.id, {
             document: { url: authfile },
             fileName: "session.json",
